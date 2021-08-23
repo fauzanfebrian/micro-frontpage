@@ -1,4 +1,4 @@
-import "../../tailwindcss/tailwind.css";
+import "style/style.css";
 import "react-toastify/dist/ReactToastify.css";
 import "nprogress/nprogress.css";
 
