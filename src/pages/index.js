@@ -4,7 +4,6 @@ import { api } from "src/consts";
 import { Category, Client, Course, Footer, Header, Hero } from "src/parts";
 
 function Home({ data }) {
-  console.log(data);
   return (
     <>
       <Head>

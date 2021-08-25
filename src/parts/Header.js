@@ -15,7 +15,6 @@ function Header({ onLight }) {
         ?.split("=")[1] ?? null
     );
     setUser(userCookie ?? null);
-    console.log(user);
   }, []);
 
   const linkColor = onLight ? "text-gray-900" : "text-white";
