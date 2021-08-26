@@ -9,12 +9,12 @@ function Hero() {
       );
   };
   return (
-    <div className="flex justify-between items-center">
-      <div className="w-1/2">
-        <h1 className="text-5xl text-white mb-5">
-          <span className="text-teal font-semibold">The New</span> Way To
-          <br /> Achieve Good{" "}
-          <span className="text-teal font-semibold">Skills</span>
+    <div className="flex px-4 justify-between items-center">
+      <div className="w-full md:w-1/2 mt-8 md:mt-0">
+        <h1 className="text-white mb-5 font-semibold text-5xl">
+          <span className="text-teal">The New</span> Way To
+          <br className="hidden md:block" /> Achieve Good{" "}
+          <span className="text-teal">Skills</span>
         </h1>
         <p className="text-white text-lg mb-8 font-light">
           We provide tons of pathskill that you
@@ -22,21 +22,21 @@ function Hero() {
           can choose and focus on
         </p>
 
-        <form onSubmit={submit}>
+        <form className="flex w-full md:w-3/4" onSubmit={submit}>
           <input
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="bg-white focus:outline-none border-0 px-6 py-3"
+            className="bg-white focus:outline-none border-0 px-4 md:px-6 py-3 w-full md:w-1/2"
             placeholder="Your email address"
             required
           />
-          <button className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3">
+          <button className="bg-orange-500 hover:bg-orange-400 trans≈ition-all duration-200 focus:outline-none shadow-inner text-white px-4 md:px-6 py-3 whitespace-nowrap">
             Register Now
           </button>
         </form>
       </div>
-      <div className="w-1/2 flex justify-end pt-24 pr-16">
+      <div className="hidden w-1/2 md:flex justify-end pt-24 pr-16">
         <div className="relative" style={{ width: 369, height: 440 }}>
           <div
             className="absolute border-indigo-700 border-2 -mt-12 -mr-6 right-0"

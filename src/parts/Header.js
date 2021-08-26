@@ -6,6 +6,13 @@ import React, { useEffect, useState } from "react";
 
 function Header({ onLight }) {
   const [user, setUser] = useState(null);
+  const [toggle, setToggle] = useState(false);
+  const toggleClick = () => {
+    setToggle(!toggle);
+    document
+      .getElementsByTagName("body")[0]
+      .classList.toggle("overflow-hidden");
+  };
 
   useEffect(() => {
     const userCookie = JSON.parse(
@@ -40,31 +47,43 @@ function Header({ onLight }) {
   );
 
   return (
-    <header className="flex justify-between items-center">
-      <div style={{ height: 54 }}>
+    <header
+      className={
+        toggle
+          ? "fixed z-50 bg-indigo-1000 inset-0 pt-10"
+          : "flex justify-between items-center"
+      }
+    >
+      <div className="flex flex-1 justify-between items-center px-4">
         <ILLogo className="on-dark" />
+        <div
+          onClick={toggleClick}
+          className={`toggle md:hidden ${toggle ? "active" : ""}`}
+        />
       </div>
 
-      <ul className="flex items-center">
-        <li>
+      <ul
+        className={["md:flex items-center", toggle ? "" : "hidden"].join(" ")}
+      >
+        <li className="my-4 md:my-0">
           <LinkHeader title="Home" href="/" />
         </li>
-        <li>
+        <li className="my-4 md:my-0">
           <LinkHeader title="Pricing" href="/" />
         </li>
-        <li>
+        <li className="my-4 md:my-0">
           <LinkHeader title="Features" href="/" />
         </li>
-        <li>
+        <li className="my-4 md:my-0">
           <LinkHeader title="Story" href="/" />
         </li>
-        <li>
+        <li className="my-6 md:my-0">
           {user ? (
             <a
               target="_blank"
               rel="noopenner noreferrer"
               href={linkCTA}
-              className="hover:bg-indigo-800 transition-all duration-200 text-white hover:text-teal text-lg px-6 py-3 font-medium ml-6 inline-flex items-center"
+              className="hover:bg-indigo-600 transition-all duration-200 text-white hover:text-teal text-lg px-6 py-3 font-medium ml-6 inline-flex items-center bg-indigo-900 md:bg-transparent"
             >
               <span className="rounded-full overflow-hidden mr-3 border-2 border-orange-500">
                 {user?.thumbnail ? (

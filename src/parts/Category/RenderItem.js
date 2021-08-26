@@ -4,10 +4,10 @@ import { formatThousand } from "src/helpers";
 
 function RenderItem({ item }) {
   return (
-    <div className="w-1/6 px-4 item-category">
+    <div className="w-1/2 md:w-1/6 px-4 item-category mb-4">
       <div
-        className="card relative transition-all duration-300"
-        style={{ width: 172, height: 219 }}
+        className="card relative transition-all duration-300 w-full"
+        style={{ height: 219 }}
       >
         {item.image}
         <div className="card-meta">

@@ -62,16 +62,17 @@ function Courses({ data }) {
       <section className="pt-10 z-30 relative" style={{ height: 360 }}>
         <div className="absolute inset-0 z-0 w-full h-full bg-black opacity-75" />
         <div
-          className="meta-title absolute bottom-0 object-fill z-0 w-full flex justify-center items-center"
+          className="meta-title px-4 absolute bottom-0 object-fill z-0 w-full flex justify-center items-center"
           style={{ marginBottom: "-25px" }}
         >
           <div>
-            <h3 className="text-6xl text-teal font-semibold text-center mb-4">
+            <h3 className="text-4xl md:text-6xl text-teal font-semibold text-center mb-4">
               Library
             </h3>
-            <h4 className="text-lg text-center text-white">
-              Jangan mau kalah update dengan yang lainnya, <br /> Yuk ikuti
-              perkembangan teknologi
+            <h4 className="text-sm md:text-lg text-center text-white">
+              Jangan mau kalah update dengan yang lainnya,{" "}
+              <br className="hidden md:block" /> Yuk ikuti perkembangan
+              teknologi
             </h4>
             <div className="flex flex-col relative" ref={selectWrapper}>
               <input
@@ -143,9 +144,9 @@ function Courses({ data }) {
         </div>
       </section>
       <section className="mx-auto mt-24 container">
-        <Course data={data} />
+        <Course data={data} isall />
       </section>
-      <section className="px-24 bg-indigo-1000 pt-12 pb-8 mt-24">
+      <section className="md:px-24 px-0 bg-indigo-1000 pt-12 pb-8 mt-24">
         <Footer />
       </section>
     </>

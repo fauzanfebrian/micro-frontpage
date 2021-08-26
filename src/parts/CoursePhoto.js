@@ -4,7 +4,7 @@ import { Modal } from "src/Components";
 
 export default function CoursePhoto({ data }) {
   return (
-    <div className="w-1/3 px-4 item relative">
+    <div className="w-full mb-4 md:w-1/3 md:px-4 item relative">
       <figure className="item-image">
         <ICToggle />
         <img

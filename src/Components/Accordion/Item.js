@@ -25,12 +25,15 @@ export default function Item({ name, id, child, active, toggle, children }) {
         </button>
       </div>
       <div
-        className="transition-all duration-500"
+        className={[
+          "transition-all duration-1000",
+          active === id ? "block" : "hidden",
+        ].join(" ")}
         style={{ height: active === id ? Height : 0 }}
       >
         <CSSTransition
           in={active === id}
-          timeout={500}
+          timeout={1000}
           onEnter={calcHeight}
           classNames="accordion-item"
         >

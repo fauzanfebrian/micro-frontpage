@@ -11,15 +11,15 @@ function Home({ data }) {
       </Head>
 
       <main>
-        <section className="header-clipping pt-8 flex flex-1">
-          <ILCircle className="absolute left-0 bottom-0" />
-          <div className="sunshine"></div>
-          <div className="container mx-auto">
+        <section className="header-clipping pt-10 min-h-screen md:min-h-0">
+          <div className="sunshine max-w-full md:block hidden"></div>
+          <ILCircle className="absolute left-0 bottom-0 md:block hidden" />
+          <div className="container mx-auto h-auto">
             <Header />
             <Hero />
           </div>
         </section>
-        <section className="mx-auto mt-24 container">
+        <section className="mx-auto mt-24 container pt-8 md:pt-24">
           <Client />
         </section>
         <section className="mx-auto mt-24 container">
@@ -28,7 +28,7 @@ function Home({ data }) {
         <section className="mx-auto mt-24 container">
           <Category />
         </section>
-        <section className="px-24 bg-indigo-1000 pt-12 pb-8 mt-24">
+        <section className="md:px-24 px-0 bg-indigo-1000 pt-12 pb-8 mt-24">
           <Footer />
         </section>
       </main>

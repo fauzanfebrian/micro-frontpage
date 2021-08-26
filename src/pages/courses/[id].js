@@ -15,7 +15,6 @@ import {
 } from "src/parts";
 
 function DetailCourse({ data }) {
-  console.log(data);
   const [isSticky, setIsSticky] = useState(true);
   const footer = useRef(null);
 
@@ -39,7 +38,7 @@ function DetailCourse({ data }) {
         <title>Micro | {data?.name ?? "Detail Kelas"}</title>
       </Head>
       <section
-        className="pt-8 relative overflow-hidden"
+        className="pt-10 relative overflow-hidden"
         style={{ height: 660 }}
       >
         {data?.chapters?.[0]?.lessons?.[0]?.video && (
@@ -76,9 +75,9 @@ function DetailCourse({ data }) {
       </section>
 
       <section className="container mx-auto pt-24 relative">
-        <div className="absolute top-0 w-full transform -translate-y-1/2">
+        <div className="md:absolute top-0 w-full transform md:-translate-y-1/2">
           <div className="w-3/4 mx-auto">
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-wrap">
               <ItemFeature
                 icon={<ICStudent className="fill-teal" />}
                 value={data?.total_student ?? 0}
@@ -104,37 +103,39 @@ function DetailCourse({ data }) {
             classNames="meta-price"
             unmountOnExit
           >
-            <div className="meta-price w-full bg-white z-50 left-0 py-3">
-              <div className="w-3/4 mx-auto">
-                <div className="flex items-center">
+            <div className="meta-price w-full bg-white left-0 py-3">
+              <div className="w-full md:w-3/4 mx-auto">
+                <div className="flex items-center px-3 md:px-0">
                   <div className="w-full">
                     <h2 className="text-gray-600">Nama Kelas</h2>
-                    <h3 className="text-2xl text-gray-900">
+                    <h3 className="text-xl md:text-2xl text-gray-900">
                       {data?.name ?? "Nama Kelas"}
                     </h3>
                   </div>
-                  <h5 className="text-2xl text-teal whitespace-nowrap mr-4">
-                    {data?.type === "free" ? (
-                      "Free"
-                    ) : (
-                      <span>Rp. {formatThousand(data?.price ?? 0)}</span>
-                    )}
-                  </h5>
-                  <a
-                    href={`${process.env.NEXT_PUBLIC_MEMBERPAGE_HOST}/joined/${data.id}`}
-                    className="bg-orange-500 hover:bg-orange-400 transition-all duration-300  focus:outline-none shadow-inner text-white px-6 py-3 whitespace-nowrap"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {data.type === "free" ? "Enroll Now" : "Buy Now"}
-                  </a>
+                  <div className="flex flex-col md:items-center md:flex-row">
+                    <h5 className="text-xl md:text-2xl text-teal whitespace-nowrap mb-1 md:mb-0 md:mr-4 text-center">
+                      {data?.type === "free" ? (
+                        "Free"
+                      ) : (
+                        <span>Rp. {formatThousand(data?.price ?? 0)}</span>
+                      )}
+                    </h5>
+                    <a
+                      href={`${process.env.NEXT_PUBLIC_MEMBERPAGE_HOST}/joined/${data.id}`}
+                      className="bg-orange-500 hover:bg-orange-400 transition-all duration-200 focus:outline-none shadow-inner text-white px-6 py-3 whitespace-nowrap  text-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {data.type === "free" ? "Enroll Now" : "Buy Now"}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </CSSTransition>
         </div>
         <div className="w-3/4 mx-auto mt-8">
-          <div className="w-3/4">
+          <div className="w-full md:w-3/4">
             <section>
               <h5 className="font-medium text-gray-900 text-2xl mb-4">
                 About <span className="text-teal">Course</span>
@@ -148,7 +149,7 @@ function DetailCourse({ data }) {
                 Course <span className="text-teal">Photos</span>
               </h5>
 
-              <div className="flex justify-start items-center -mx-4 mt-6">
+              <div className="flex flex-wrap justify-start items-center -px-4 mt-6">
                 {data?.images?.length > 0 ? (
                   data.images.map((photo, index) => (
                     <CoursePhoto key={index} data={photo} />
@@ -169,7 +170,7 @@ function DetailCourse({ data }) {
                 <div className="w-full text-center py-12">No chapter found</div>
               )}
             </section>
-            <section className="mt-10 w-2/3">
+            <section className="mt-10 md:w-2/3">
               <h5 className="font-medium text-gray-900 text-2xl mb-4">
                 Our <span className="text-teal">Instructor</span>
               </h5>
@@ -189,7 +190,7 @@ function DetailCourse({ data }) {
                 </div>
               </div>
             </section>
-            <section className="mt-10 w-1/2">
+            <section className="mt-10 md:w-1/2">
               <h5 className="font-medium text-gray-900 text-2xl mb-4">
                 Happy <span className="text-teal">Students</span>
               </h5>
@@ -207,7 +208,7 @@ function DetailCourse({ data }) {
           </div>
         </div>
       </section>
-      <section className="px-24 bg-indigo-1000 pt-12 pb-8 mt-24" ref={footer}>
+      <section className="bg-indigo-1000 pt-12 pb-8 mt-24" ref={footer}>
         <Footer />
       </section>
     </>

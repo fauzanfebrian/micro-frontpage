@@ -44,7 +44,7 @@ function Courses() {
   ];
   return (
     <>
-      <div className="flex items-center">
+      <div className="flex items-center px-4">
         <div className="w-auto">
           <h2 className="text-gray-600 text-lg">Category</h2>
           <h3 className="text-gray-900 text-xl font-medium">
@@ -52,7 +52,7 @@ function Courses() {
           </h3>
         </div>
       </div>
-      <div className="flex mt-6 -mx-4 items-start justify-start">
+      <div className="flex mt-6 -px-4 items-start justify-start flex-wrap">
         {data.map((item, index) => (
           <RenderItem item={item} key={index} />
         ))}

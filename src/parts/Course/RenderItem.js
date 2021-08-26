@@ -4,7 +4,7 @@ import { ICPlay } from "src/assets";
 
 function RenderItem({ item }) {
   return (
-    <div className="w-1/4 px-4 item relative mb-3">
+    <div className="w-full md:w-1/4 px-4 item relative mb-4">
       <figure className="item-image">
         <ICPlay />
         <img
@@ -13,7 +13,7 @@ function RenderItem({ item }) {
           style={{ height: 170, width: "100%" }}
         />
       </figure>
-      <h4 className="text-lg text-gray-900 mt-3 capitalize">
+      <h4 className="text-lg text-gray-900 mt-2 capitalize">
         {item?.name ?? "Course Name"}
       </h4>
       <h3 className="text-gray-600 capitalize">
