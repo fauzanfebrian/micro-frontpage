@@ -9,7 +9,7 @@ function Header({ onLight }) {
   const [toggle, setToggle] = useState(false);
   const toggleClick = () => {
     setToggle(!toggle);
-    document.querySelector("#root").classList.toggle("overflow-hidden");
+    document.querySelector("#__next").classList.toggle("overflow-hidden");
   };
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function Header({ onLight }) {
         ?.split("=")[1] ?? null
     );
     setUser(userCookie ?? null);
-    document.querySelector("#root").className = "";
+    document.querySelector("#__next").className = "";
   }, []);
 
   const linkColor = onLight ? "text-gray-900" : "text-white";
