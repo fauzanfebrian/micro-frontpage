@@ -18,8 +18,18 @@ function Home({ data }) {
         />
         <meta
           property="og:image"
-          content={`${NEXT_PUBLIC_BASE_HOST}/images/il-book.jpeg`}
+          content={`${process.env.NEXT_PUBLIC_BASE_HOST}/images/il-book.jpeg`}
         />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
+        <meta
+          property="og:image:alt"
+          content="Read more book and get more knowlegde"
+        />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_BASE_HOST} />
+        <meta property="og:type" content="webapp" />
+        <meta property="og:locale" content="id_ID" />
       </Head>
 
       <main>
