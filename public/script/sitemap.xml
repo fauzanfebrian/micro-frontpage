@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://microfrontpage.vercel.app</loc>
+        <lastmod>2021-08-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://microfrontpage.vercel.app/courses</loc>
+        <lastmod>2021-08-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://micromemberpage.netlify.app/login</loc>
+        <lastmod>2021-08-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://micromemberpage.netlify.app/register</loc>
+        <lastmod>2021-08-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset> 
