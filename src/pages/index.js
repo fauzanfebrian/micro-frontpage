@@ -7,7 +7,19 @@ function Home({ data }) {
   return (
     <>
       <Head>
-        <title>Bwa Micro</title>
+        <title>Micro Course</title>
+        <meta
+          property="og:title"
+          content="Online course with experienced mentor"
+        />
+        <meta
+          property="og:description"
+          content="Grow your skills with our online course, many experienced mentor that we have"
+        />
+        <meta
+          property="og:image"
+          content={`${NEXT_PUBLIC_BASE_HOST}/images/il-book.jpeg`}
+        />
       </Head>
 
       <main>
